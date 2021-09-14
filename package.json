@@ -11,11 +11,14 @@
     "url": "git+https://github.com/ailushyk/mf-space.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alex Iliushyk",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ailushyk/mf-space/issues"
   },
   "homepage": "https://github.com/ailushyk/mf-space#readme",
-  "workspaces": []
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
 }
