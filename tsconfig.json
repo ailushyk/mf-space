@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "declaration": true,
+    "declarationDir": "./dist/types/cli",
+    "outDir": "./dist/cli",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": false,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./src/cli"
+  ]
+}
