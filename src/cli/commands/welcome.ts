@@ -1,19 +1,19 @@
-import type { Arguments, CommandBuilder } from 'yargs';
+import { Command } from 'commander';
+import chalk from 'chalk';
 
-type Options = {
-  name: string;
-};
+export const makeWelcomeCommand = (): Command => {
+  const program = new Command();
+  program.name('welcome');
+  program.description('Your own mf space');
 
-export const command: string = 'welcome <name>';
-export const desc: string = 'Your own mf space';
+  program.argument('<username>');
 
-export const builder: CommandBuilder<Options, Options> = (yargs) =>
-  yargs
-    .positional('name', { type: 'string', demandOption: true });
+  program.action((username) => {
+    console.log(`Welcome to the mf space, ${username}!`);
+  });
+  program.showHelpAfterError(
+    chalk.bgWhite('add --help for additional information')
+  );
 
-export const handler = (argv: Arguments<Options>): void => {
-  const { name, upper } = argv;
-  const greeting = `Welcome to the mf space, ${name}!`;
-  process.stdout.write(upper ? greeting.toUpperCase() : greeting);
-  process.exit(0);
+  return program;
 };

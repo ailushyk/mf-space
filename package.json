@@ -1,12 +1,11 @@
 {
   "name": "mf-space",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "mf-space",
-  "main": "index.js",
+  "main": "./dist/cli/index.js",
   "scripts": {
-    "start": "lerna run --parallel start",
-    "build": "ehco \"Error: no build specified\" && exit 1",
-    "build:cli": "tsc",
+    "start": "tsc --watch",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": "./dist/cli/index.js",
@@ -15,23 +14,26 @@
     "url": "git+https://github.com/ailushyk/mf-space.git"
   },
   "keywords": [],
-  "author": "Alex Iliushyk",
+  "author": "Alex Iliushyk <ailushyk@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ailushyk/mf-space/issues"
   },
   "homepage": "https://github.com/ailushyk/mf-space#readme",
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
   "devDependencies": {
     "@types/node": "^16.9.2",
-    "@types/yargs": "^17.0.2",
-    "lerna": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "chalk": "^4.1.2",
+    "commander": "^8.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "prompts": "^2.4.1",
     "typescript": "^4.4.3"
   },
-  "dependencies": {
-    "yargs": "^17.1.1"
+  "engines": {
+    "node": ">=14"
   }
 }
