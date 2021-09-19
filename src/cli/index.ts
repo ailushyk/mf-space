@@ -1,8 +1,12 @@
 #!/usr/bin/env node
-import yargs from 'yargs/yargs';
-import { hideBin } from 'yargs/helpers';
+import { Command } from 'commander';
+import { makeWelcomeCommand } from './commands/welcome';
 
-yargs(hideBin(process.argv)).commandDir('commands').strict().alias({
-  v: 'version',
-  h: 'help',
-}).argv;
+const program = new Command();
+program.name('mf-space');
+program.addCommand(makeWelcomeCommand());
+
+program.action(() => {
+  program.help();
+});
+program.parse(process.argv);
