@@ -14,23 +14,24 @@
     "url": "git+https://github.com/ailushyk/mf-space.git"
   },
   "keywords": [],
-  "author": "Alex Iliushyk",
+  "author": "Alex Iliushyk <ailushyk@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ailushyk/mf-space/issues"
   },
   "homepage": "https://github.com/ailushyk/mf-space#readme",
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
+  "dependencies": {
+    "yargs": "^17.1.1"
+  },
   "devDependencies": {
     "@types/node": "^16.9.2",
     "@types/yargs": "^17.0.2",
-    "lerna": "^4.0.0",
+    "chalk": "^4.1.2",
+    "commander": "^8.2.0",
+    "prompts": "^2.4.1",
     "typescript": "^4.4.3"
   },
-  "dependencies": {
-    "yargs": "^17.1.1"
+  "engines": {
+    "node": ">=14"
   }
 }
