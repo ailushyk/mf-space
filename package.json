@@ -1,6 +1,6 @@
 {
   "name": "mf-space",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "mf-space",
   "main": "./dist/cli/index.js",
   "scripts": {
