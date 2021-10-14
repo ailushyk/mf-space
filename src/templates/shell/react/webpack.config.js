@@ -12,16 +12,16 @@ module.exports = (env, argv) => {
     entry: './src/index',
     devServer: {
       static: {
-        directory: path.join(__dirname, 'dist')
+        directory: path.join(__dirname, 'dist'),
       },
       port: 3001,
-      historyApiFallback: true
+      historyApiFallback: true,
     },
     output: {
-      publicPath: 'auto'
+      publicPath: 'auto',
     },
     resolve: {
-      extensions: ['.jsx', '.js', '.json', '.tsx', '.ts']
+      extensions: ['.jsx', '.js', '.json', '.tsx', '.ts'],
     },
     module: {
       rules: [
@@ -49,32 +49,32 @@ module.exports = (env, argv) => {
               presets: [
                 '@babel/preset-env',
                 '@babel/preset-react',
-                '@babel/preset-typescript'
-              ]
-            }
-          }
-        }
-      ]
+                '@babel/preset-typescript',
+              ],
+            },
+          },
+        },
+      ],
     },
     plugins: [
       new ModuleFederationPlugin({
         ...mfConfig,
-        name: 'shell'
+        name: 'shell',
       }),
       new HtmlWebPackPlugin({
-        template: './src/index.html'
+        template: './src/index.html',
       }),
       new ForkTsCheckerWebpackPlugin({
-        async: false
-      })
-    ]
+        async: false,
+      }),
+    ],
   };
 
   if (mode === 'production') {
     config.output = {
       path: path.resolve(__dirname, 'build'),
       filename: '[name].[contenthash].js',
-      publicPath: 'http://localhost:3001/'
+      publicPath: 'http://localhost:3001/',
     };
     config.plugins.push(new CleanWebpackPlugin());
   }
