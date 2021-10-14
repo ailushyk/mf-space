@@ -1,15 +1,17 @@
 {
   "name": "mf-space",
-  "version": "0.0.3",
+  "version": "0.0.11",
   "description": "mf-space",
-  "main": "./dist/cli/index.js",
   "scripts": {
     "start": "tsc --watch",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist"
+  ],
   "bin": {
-    "mf-space": "mf-space"
+    "mf-space": "./dist/bin/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,19 +24,21 @@
     "url": "https://github.com/ailushyk/mf-space/issues"
   },
   "homepage": "https://github.com/ailushyk/mf-space#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.2.0",
+    "degit": "^2.8.4",
+    "prompts": "^2.4.1"
+  },
   "devDependencies": {
     "@types/degit": "^2.8.3",
     "@types/node": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
-    "chalk": "^4.1.2",
-    "commander": "^8.2.0",
-    "degit": "^2.8.4",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.4.1",
-    "prompts": "^2.4.1",
     "typescript": "^4.4.3"
   },
   "engines": {

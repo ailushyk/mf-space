@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import { makeWelcomeCommand } from './commands/welcome';
-import { makeCreateCommand } from './commands/create';
+import { makeWelcomeCommand } from './welcome';
+import { makeCreateCommand } from './create';
 
 const program = new Command();
 program.name('mf-space');
